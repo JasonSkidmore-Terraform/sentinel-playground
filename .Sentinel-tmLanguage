@@ -1,0 +1,39 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Sublime Snippet (Raw)
+scopeName: source.ssraw
+fileTypes: [ssraw]
+uuid: 0da65be4-5aac-4b6f-8071-1aadb970b8d9
+
+patterns:
+- comment: Tab stops like $1, $2...
+  name: keyword.other.ssraw
+  match: \$(\d+)
+  captures:
+    '1': {name: constant.numeric.ssraw}
+
+- comment: Variables like $PARAM1, $TM_SELECTION...
+  name: keyword.other.ssraw
+  match: \$([A-Za-z][A-Za-z0-9_]+)
+  captures:
+    '1': {name: constant.numeric.ssraw}
+
+- name: variable.complex.ssraw
+  begin: '(\$)(\{)([0-9]+):'
+  beginCaptures:
+    '1': {name: keyword.other.ssraw}
+    '3': {name: constant.numeric.ssraw}
+  end: \}
+  patterns:
+  - include: $self
+  - name: support.other.ssraw
+    match: .
+
+- comment: Sequences like \$, \> and \<
+  name: constant.character.escape.ssraw
+  match: \\[$<>]
+
+- comment: Unescaped and unmatched magic characters
+  name: invalid.illegal.ssraw
+  match: '[$<>]'
+...

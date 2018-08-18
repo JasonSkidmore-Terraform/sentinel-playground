@@ -1,0 +1,15 @@
+import "sockaddr"
+
+# We expect logins to come only from our private IP range
+cidrcheck = rule {
+	sockaddr.is_contained(request.connection.remote_addr, "10.20.0.0/16")
+}
+
+# Require MFA along with LDAP credentials
+ping_valid = rule {
+	mfa.ping.is_valid
+}
+
+main = rule when request.path is "auth/ldap/login" {
+	ping_valid and cidrcheck
+}

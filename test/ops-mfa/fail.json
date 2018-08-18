@@ -1,0 +1,18 @@
+{
+  "global": {
+    "request": {
+      "path": "no/secret/dangerous/testingstring",
+      "operation": "read"
+    },
+    "mfa": {
+      "okta": {
+        "is_valid": false
+      }
+    },
+    "identity": {
+      "groups": [
+        "noops"
+      ]
+    }
+  }
+}

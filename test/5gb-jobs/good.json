@@ -1,0 +1,38 @@
+{
+  "global": {
+    "job": {
+      "task_groups": [
+        {
+          "count": 2,
+          "tasks": [
+            {
+              "resources": {
+                "memory": 1000
+              }
+            },
+            {
+              "resources": {
+                "memory": 1000
+              }
+            }
+          ]
+        },
+        {
+          "count": 2,
+          "tasks": [
+            {
+              "resources": {
+                "memory": 1000
+              }
+            },
+            {
+              "resources": {
+                "memory": 1000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

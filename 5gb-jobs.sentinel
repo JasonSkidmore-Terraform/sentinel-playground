@@ -1,0 +1,20 @@
+sum_tasks = func(tg) {
+    count = 0
+    for tg.tasks as t { count += t.resources.memory else 0 }
+    return count
+}
+
+sum_job = func() {
+    count = 0
+    for job.task_groups as tg {
+        if tg.count < 0 {
+            fail("unreasonable count value: %d", tg.count)
+        }
+
+        count += sum_tasks(tg) * tg.count
+    }
+
+    return count
+}
+
+main = rule { sum_job() <= 5000 }

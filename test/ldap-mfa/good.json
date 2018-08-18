@@ -1,0 +1,15 @@
+{
+  "global": {
+    "request": {
+      "path": "auth/ldap/login",
+      "connection": {
+        "remote_addr": "10.20.0.0/16"
+      }
+    },
+    "mfa": {
+      "ping": {
+        "is_valid": true
+      }
+    }
+  }
+}

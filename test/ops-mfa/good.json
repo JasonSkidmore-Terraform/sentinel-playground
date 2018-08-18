@@ -1,0 +1,18 @@
+{
+  "global": {
+    "request": {
+      "path": "secret/dangerous/testingstring",
+      "operation": "update"
+    },
+    "mfa": {
+      "okta": {
+        "is_valid": true
+      }
+    },
+    "identity": {
+      "groups": [
+        "sysops"
+      ]
+    }
+  }
+}

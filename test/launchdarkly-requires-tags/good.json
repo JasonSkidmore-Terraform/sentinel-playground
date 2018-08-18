@@ -1,0 +1,10 @@
+{
+  "global": {
+    "tfplan": {
+      "path": "auth/ldap/login",
+      "connection": {
+        "remote_addr": "10.20.0.0/16"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "global": {
+    "job": {
+      "task_groups": [
+        {
+          "tasks": [
+            {
+              "driver": "docker"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

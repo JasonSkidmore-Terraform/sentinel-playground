@@ -1,0 +1,7 @@
+{
+  "imports": {
+      "tfplan": {
+          "path": "/path/to/sentinel-tfplan-import"
+      }
+  }
+}

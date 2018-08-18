@@ -1,0 +1,21 @@
+import "strings"
+
+# Scope this policy only to operations that change data within our dangerous
+# area
+pathcheck = rule {
+	strings.has_prefix(request.path, "secret/dangerous/") and
+	request.operation in ["create", "update", "delete"]
+}
+
+# Ensure that for this dangerous operation we've passed an Okta MFA check
+oktacheck = rule {
+	mfa.okta.is_valid
+}
+
+# Make sure the caller is a member of the sysops group
+idcheck = rule {
+	"sysops" in identity.groups
+}
+main = rule when pathcheck {
+	oktacheck and idcheck
+}

@@ -1,0 +1,12 @@
+{
+  "global": {
+    "request": {
+      "path": "test/kv",
+      "method": "PUT",
+      "kv": {
+        "key": "port",
+        "value": 8080
+      }
+    }
+  }
+}
