@@ -1,0 +1,1 @@
+main = rule { int(tfplan.resources.random_id.random[0].diff.byte_length.new) < 24 }

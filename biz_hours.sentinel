@@ -1,0 +1,10 @@
+now = time.now
+day = now.weekday
+hour = now.hour
+
+is_biz_hours = rule { hour > 17 or hour < 3 }
+is_weekday = rule { day in [1, 2, 3, 4, 5] }
+
+is_string = rule { type.type_of("foo") is "string" }
+
+main = rule { is_weekday and is_biz_hours }

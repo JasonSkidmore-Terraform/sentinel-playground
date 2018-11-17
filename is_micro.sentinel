@@ -1,0 +1,1 @@
+main = rule { tfconfig.modules.ec2_instance.config.instance_type == "t2.micro" }
