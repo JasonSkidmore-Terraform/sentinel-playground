@@ -1,7 +1,7 @@
 allowed_drivers = ["docker"]
 
 main = rule {
-    all job.task_groups as tg {
-        all tg.tasks as t { t.driver in allowed_drivers }
-    }
+	all job.task_groups as tg {
+		all tg.tasks as t { t.driver in allowed_drivers }
+	}
 }

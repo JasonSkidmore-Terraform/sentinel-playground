@@ -1,8 +1,7 @@
 import "tfplan"
 
 m = tfplan.module(["web"])
-r = m.resources.launchdarkly_feature_flag.slack-confirmation-notification.tags
-
+r = m.resources.launchdarkly_feature_flag.slack - confirmation - notification.tags
 
 // There should only be a single app instance being created.
 main = rule { length(r) is 1 }
